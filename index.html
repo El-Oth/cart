@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shopping Cart UI</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,900"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/c8fc0bf3c9.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="CartContainer">
+      <div class="Header">
+        <div class="logo" style="display: flex; align-items: center">
+          <h3 class="Heading">DoorDash</h3>
+          <i class="fas fa-shopping-cart" style="color: #dc2f02"></i>
+        </div>
+        <h5 class="Action" onclick="remov(items,'total', 'sum')">Remove all</h5>
+      </div>
+      <div class="items">
+        <div id="item1" class="Cart-Items">
+          <div class="image-box">
+            <img src="images/apple.png" style="height: 120px" />
+          </div>
+          <div class="about">
+            <h1 class="title">Apple Juice</h1>
+            <h3 class="subtitle">250ml</h3>
+            <div class="stock">
+              <img src="images/veg.png" style="height: 30px" />in-stock
+            </div>
+            <div style="display: flex">
+              <p>$</p>
+              <p id="unitPrice1">2.99</p>
+            </div>
+          </div>
+          <div class="counter">
+            <div class="btn" onclick="add('count1','price1','unitPrice1')">
+              +
+            </div>
+            <p type="number" id="count1" class="count">1</p>
+            <div class="btn" onclick="sub('count1','price1','unitPrice1')">
+              -
+            </div>
+          </div>
+          <div class="prices">
+            <div class="amount">
+              <p>$</p>
+              <p id="price1">2.99</p>
+            </div>
+            <div class="heart" onclick="like('like-bttn1')">
+              <svg
+                id="like-bttn1"
+                aria-hidden="true"
+                focusable="false"
+                data-prefix="fas"
+                data-icon="heart"
+                class="svg-inline--fa fa-heart fa-w-16"
+                role="img"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                fill="#ccd5ae"
+              >
+                <path
+                  d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
+                ></path>
+              </svg>
+            </div>
+            <div class="remove" onclick="remov(item1,'price1', 'count1')">
+              <u>Remove</u>
+            </div>
+          </div>
+        </div>
+
+        <div id="item2" class="Cart-Items pad">
+          <div class="image-box">
+            <img src="images/chips.jpg" style="height: 120px" />
+          </div>
+          <div class="about">
+            <h1 class="title">Lay's chips</h1>
+            <h3 class="subtitle">170mg</h3>
+            <div class="stock">
+              <img src="images/veg.png" style="height: 30px" /> in-stock
+            </div>
+            <div style="display: flex">
+              <p>$</p>
+              <p id="unitPrice2">3.19</p>
+            </div>
+          </div>
+
+          <div class="counter">
+            <div class="btn" onclick="add('count2','price2','unitPrice2')">
+              +
+            </div>
+            <div id="count2" class="count">1</div>
+            <div class="btn" onclick="sub('count2','price2','unitPrice2')">
+              -
+            </div>
+          </div>
+          <div class="prices">
+            <div class="amount">
+              <p>$</p>
+              <p id="price2">3.19</p>
+            </div>
+            <div class="heart" onclick="like('like-bttn')">
+              <svg
+              
+                id="like-bttn"
+                aria-hidden="true"
+                focusable="false"
+                data-prefix="fas"
+                data-icon="heart"
+                class="svg-inline--fa fa-heart fa-w-16"
+                role="img"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                fill="#ccd5ae"
+              >
+                <path
+                  d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
+                ></path>
+              </svg>
+            </div>
+            <div class="remove" onclick="remov(item2,'price2', 'count2')">
+              <u>Remove</u>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="checkout">
+        <div class="last-total">
+          <div>
+            <div class="Subtotal">Sub-Total</div>
+            <div class="item-number">
+            <div id="sum" >2</div><p>items</p>
+          </div>
+          </div>
+          <span class="total-amount">$</span>
+          <div id="total" class="total-amount">6.18</div>
+        </div>
+        <button class="button">Checkout</button>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
